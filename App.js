@@ -4,12 +4,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import {enableScreens} from 'react-native-screens'
 
 import HealthHistoryScreen from './screens/Health/HealthHistoryScreen';
 
 import FileUploadScreen from './screens/Upload/FileUploadScreen';
 import BookingScreen from './screens/Booking/BookingScreen'; // Ensure this is the correct path to your BookingScreen
 
+enableScreens(); // Enable native screens for better performance
 const Tab = createBottomTabNavigator();
 
 export default function App() {
