@@ -1,17 +1,19 @@
 import React from 'react';
+import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import {enableScreens} from 'react-native-screens'
+import { enableScreens } from 'react-native-screens';
 
-import HealthHistoryScreen from './screens/Health/HealthHistoryScreen';
+// Enable screens for better performance
+enableScreens();
 
+import HealthNavigator from './screens/Health/HealthNavigator';
 import FileUploadScreen from './screens/Upload/FileUploadScreen';
-import BookingScreen from './screens/Booking/BookingScreen'; // Ensure this is the correct path to your BookingScreen
+import BookingScreen from './screens/Booking/BookingScreen';
 
-enableScreens(); // Enable native screens for better performance
 const Tab = createBottomTabNavigator();
 
 export default function App() {
@@ -38,7 +40,7 @@ export default function App() {
             headerShown: false,
           })}
         >
-          <Tab.Screen name="Health" component={HealthHistoryScreen} />
+          <Tab.Screen name="Health" component={HealthNavigator} />
           <Tab.Screen name="Upload" component={FileUploadScreen} />
           <Tab.Screen name="Booking" component={BookingScreen} />          
         </Tab.Navigator>

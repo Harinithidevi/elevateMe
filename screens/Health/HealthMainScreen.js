@@ -19,13 +19,13 @@ const screens = [
   { label: 'Medicine Info', value: 'MedicineInfo' },
 ];
 
-export default function HealthHistoryScreen() {
+export default function HealthMainScreen({ navigation }) {
   const [selectedScreen, setSelectedScreen] = useState('PersonalInformation');
 
   let ScreenComponent;
   switch (selectedScreen) {
     case 'HealthReport':
-      ScreenComponent = () => <HealthReportScreen showHeader={false} />;
+      ScreenComponent = () => <HealthReportScreen navigation={navigation} showHeader={false} />;
       break;
     case 'Remainder':
       ScreenComponent = RemainderScreen;
